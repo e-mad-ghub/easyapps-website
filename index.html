@@ -3,76 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy-Apps Solutions | Innovative Software Hub</title>
+    <title>Easy-Apps Solutions | Simply Smarter Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --mint: #00BFA5; --teal: #006064; --dark: #000000; --soft-gray: #f8f9fb; }
-        body { font-family: 'Inter', -apple-system, sans-serif; margin: 0; background: var(--dark); color: white; overflow-x: hidden; }
+        :root { --mint: #00BFA5; --teal: #006064; --light-bg: #FFFFFF; --soft-bg: #F0FDFA; --text: #1A202C; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; background: var(--light-bg); color: var(--text); overflow-x: hidden; }
         
-        /* Header */
-        header { padding: 40px 20px; text-align: center; border-bottom: 1px solid #1a1a1a; }
-        header h1 { font-size: 1.5rem; letter-spacing: 4px; font-weight: 900; color: white; margin: 0; text-transform: uppercase; }
-        header p { color: var(--mint); font-size: 0.9rem; margin-top: 10px; font-weight: 500; }
+        /* Cheerful Background Glow */
+        .glow { position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0, 191, 165, 0.1) 0%, rgba(255,255,255,0) 70%); z-index: -1; }
 
-        /* Hero Section */
+        /* Navigation */
+        nav { padding: 30px; display: flex; justify-content: center; align-items: center; }
+        .brand { font-weight: 800; font-size: 1.4rem; color: var(--teal); letter-spacing: -0.5px; }
+        .brand span { color: var(--mint); }
+
+        /* Friendly Hero Section */
         .hero { padding: 100px 20px; text-align: center; max-width: 900px; margin: auto; }
-        .hero h2 { font-size: 3.5rem; line-height: 1; letter-spacing: -2px; margin-bottom: 20px; }
-        .hero span { color: var(--mint); }
-
-        /* Products Section */
-        .section-label { text-align: center; color: #444; font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 40px; }
-        .products { padding: 60px 20px; max-width: 1100px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .hero h2 { font-size: 3.8rem; line-height: 1; letter-spacing: -2px; margin-bottom: 25px; color: var(--teal); }
+        .hero p { font-size: 1.3rem; color: #4A5568; max-width: 600px; margin: 0 auto 40px auto; line-height: 1.5; }
+        .highlight { color: var(--mint); position: relative; }
         
-        /* EasyPass Card */
-        .card { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 32px; padding: 40px; transition: all 0.3s; position: relative; overflow: hidden; }
-        .card:hover { border-color: var(--mint); transform: translateY(-5px); }
-        .card img { width: 80px; margin-bottom: 20px; }
-        .card h3 { font-size: 2rem; margin: 0; letter-spacing: -1px; }
-        .card .tagline { color: var(--mint); font-weight: bold; margin: 10px 0 20px 0; font-size: 0.9rem; }
-        .card p { color: #888; line-height: 1.6; font-size: 1rem; margin-bottom: 30px; }
+        /* Modern Cards Section */
+        .section-label { text-align: center; font-weight: 800; color: var(--mint); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+        .container { max-width: 1100px; margin: auto; padding: 0 20px 100px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
         
-        .btn { display: inline-block; background: var(--mint); color: black; padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 0.9rem; transition: 0.2s; }
-        .btn:hover { opacity: 0.9; transform: scale(1.02); }
+        /* EasyPass Premium Card */
+        .product-card { background: var(--soft-bg); border-radius: 48px; padding: 60px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 2px solid white; box-shadow: 0 10px 30px rgba(0, 191, 165, 0.05); }
+        .product-card:hover { transform: scale(1.02); box-shadow: 0 30px 60px rgba(0, 191, 165, 0.15); border-color: var(--mint); }
+        
+        /* The Logo Anchor */
+        .icon-box { width: 90px; height: 90px; background: #000; border-radius: 28px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; box-shadow: 0 12px 24px rgba(0,0,0,0.2); }
+        .icon-box img { width: 100%; border-radius: 28px; }
 
-        /* Future App Placeholder */
-        .future-card { border: 1px dashed #222; border-radius: 32px; display: flex; align-items: center; justify-content: center; min-height: 300px; color: #333; font-weight: bold; }
+        .product-card h3 { font-size: 2.5rem; margin: 0; color: var(--teal); letter-spacing: -1px; }
+        .tagline { color: var(--mint); font-weight: 700; margin: 12px 0 25px 0; font-size: 0.95rem; }
+        .product-card p { font-size: 1.15rem; line-height: 1.6; color: #4A5568; margin-bottom: 40px; }
+        
+        /* Bubbly Button */
+        .btn { display: inline-block; background: var(--teal); color: white; padding: 18px 36px; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1rem; transition: 0.3s; }
+        .btn:hover { background: var(--mint); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 191, 165, 0.3); }
 
-        footer { padding: 60px 20px; text-align: center; border-top: 1px solid #1a1a1a; font-size: 0.8rem; color: #444; }
-        footer a { color: #666; text-decoration: none; margin: 0 10px; }
+        /* Future Empty State */
+        .coming-soon { border: 3px dashed #E2E8F0; border-radius: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 450px; text-align: center; color: #CBD5E0; padding: 40px; }
+        
+        footer { padding: 60px 20px; text-align: center; background: #f7fafc; border-top: 1px solid #edf2f7; }
+        footer p { font-weight: 600; color: #718096; font-size: 0.9rem; }
+        footer a { color: var(--teal); text-decoration: none; font-weight: 800; margin: 0 15px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Easy-Apps <span>Solutions</span></h1>
-        <p>BUILDING THE TOOLS OF TOMORROW</p>
-    </header>
+    <div class="glow"></div>
+
+    <nav>
+        <div class="brand">Easy-Apps <span>Solutions</span></div>
+    </nav>
 
     <div class="hero">
-        <h2>We build software that makes complex tasks <span>effortless.</span></h2>
+        <h2>Great software is <span class="highlight">simple.</span></h2>
+        <p>We build lightweight, beautiful tools that solve complex problems with zero effort.</p>
     </div>
 
-    <div class="section-label">ACTIVE PRODUCTS</div>
+    <div class="section-label">Our Solutions</div>
 
-    <div class="products">
-        <!-- EasyPass Section -->
-        <div class="card">
-            <img src="logo.png" alt="EasyPass Logo">
-            <h3>EasyPass</h3>
-            <div class="tagline">Membership management, simplified.</div>
-            <p>The first serverless membership system that uses your own Google Drive as a secure data hub. Professional security, zero effort.</p>
-            <a href="https://play.google.com/store" class="btn">GET THE APP</a>
-        </div>
+    <div class="container">
+        <div class="grid">
+            <!-- EasyPass Featured Product -->
+            <div class="product-card">
+                <div class="icon-box">
+                    <img src="logo.png" alt="EasyPass">
+                </div>
+                <h3>EasyPass</h3>
+                <div class="tagline">Membership Simplified</div>
+                <p>The smartest way to manage your members. Secured by Google Drive, powered by your phone, and built for privacy.</p>
+                <a href="https://play.google.com/store" class="btn">Get Started Free</a>
+            </div>
 
-        <!-- Future Project -->
-        <div class="future-card">
-            NEXT SOLUTION IN DEVELOPMENT...
+            <!-- Coming Soon -->
+            <div class="coming-soon">
+                <div style="font-size: 3rem; margin-bottom: 10px;">✨</div>
+                <strong style="color: #A0AEC0;">Innovation in progress</strong>
+                <p style="font-size: 0.9rem;">We're currently designing our next "Easy" solution. Stay tuned!</p>
+            </div>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 Easy-Apps Solutions | 
-        <a href="privacy.html">Privacy Policy</a> | 
-        <a href="mailto:emad.mpm@gmail.com">Contact Support</a>
+        <p>&copy; 2026 Easy-Apps Solutions</p>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:emad.mpm@gmail.com">Work With Us</a>
     </footer>
 
 </body>
