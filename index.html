@@ -3,57 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyPass | Professional Membership Management</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>EasyPass - Membership Management Simplified</title>
     <style>
-        :root { --mint: #00BFA5; --teal: #006064; --text: #2D3748; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; background: #FFFFFF; color: var(--text); -webkit-font-smoothing: antialiased; }
-        nav { padding: 40px; text-align: center; border-bottom: 1px solid #F7FAFC; }
-        .brand { font-weight: 800; font-size: 1.5rem; color: var(--teal); letter-spacing: -1px; }
-        .brand span { color: var(--mint); }
-        .hero { padding: 80px 20px 40px 20px; text-align: center; max-width: 800px; margin: auto; }
-        .hero h1 { font-size: 3.5rem; line-height: 1.1; letter-spacing: -2px; margin-bottom: 20px; color: var(--teal); }
-        .hero p { font-size: 1.3rem; color: #718096; line-height: 1.5; margin-bottom: 30px; }
-        .highlight { color: var(--mint); }
-        .container { max-width: 1000px; margin: auto; padding: 20px 20px 100px 20px; }
-        .card { background: #FFFFFF; border-radius: 48px; padding: 50px; border: 1px solid #EDF2F7; text-align: center; box-shadow: 0 30px 60px rgba(0, 191, 165, 0.05); }
-        .logo-box { width: 100px; height: 100px; background: #000; border-radius: 32px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px auto; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .logo-box img { width: 100%; height: 100%; }
-        .card h2 { font-size: 2.5rem; margin: 0; color: var(--teal); letter-spacing: -1px; }
-        .card .description { font-size: 1.15rem; line-height: 1.7; color: #4A5568; margin: 25px 0 45px 0; text-align: left; }
-        .btn { display: inline-block; background: var(--mint); color: white; padding: 20px 45px; border-radius: 24px; text-decoration: none; font-weight: 800; font-size: 1.1rem; transition: 0.3s; box-shadow: 0 10px 20px rgba(0, 191, 165, 0.2); }
-        .btn:hover { background: var(--teal); transform: scale(1.05); }
-        footer { padding: 80px 20px; text-align: center; background: #FFFFFF; border-top: 1px solid #EDF2F7; }
-        footer p { color: #A0AEC0; margin-bottom: 25px; font-weight: 500; }
-        footer a { color: var(--teal); text-decoration: none; font-weight: 700; margin: 0 15px; font-size: 0.95rem; }
+        body { font-family: sans-serif; background: #fff; color: #333; margin: 0; padding: 0; text-align: center; }
+        .hero { padding: 80px 20px; background: #000; color: #fff; }
+        .logo { width: 140px; height: 140px; margin-bottom: 20px; border-radius: 30px; }
+        h1 { font-size: 3.5rem; margin: 0; letter-spacing: -2px; }
+        .content { max-width: 800px; margin: 50px auto; padding: 20px; text-align: left; line-height: 1.7; }
+        h2 { color: #00BFA5; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 40px; }
+        .btn { display: inline-block; background: #00BFA5; color: #000; padding: 18px 40px; border-radius: 40px; text-decoration: none; font-weight: bold; margin-top: 30px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        footer { margin-top: 80px; padding: 40px; background: #fafafa; border-top: 1px solid #eee; font-size: 0.9rem; }
+        footer a { color: #006064; text-decoration: none; margin: 0 15px; font-weight: bold; }
     </style>
 </head>
 <body>
-    <nav><div class="brand">Easy-Apps <span>Solutions</span></div></nav>
+
     <div class="hero">
-        <h1>Welcome to <span class="highlight">EasyPass.</span></h1>
-        <p>A professional membership management suite built for simplicity and data sovereignty.</p>
+        <img src="logo.png" alt="EasyPass App Logo" class="logo">
+        <h1>EasyPass</h1>
+        <p>The Official Home of EasyPass Membership Solutions</p>
     </div>
-    <div class="container">
-        <div class="card">
-            <div class="logo-box"><img src="logo.png" alt="EasyPass App Logo"></div>
-            <h2>The EasyPass Solution</h2>
-            <div class="description">
-                <p><strong>EasyPass</strong> is a secure, serverless membership management platform that allows organizations to maintain full ownership of their data. By integrating directly with a user's own <strong>Google Drive</strong> cloud storage, EasyPass provides:</p>
-                <ul>
-                    <li>Bi-directional synchronization of member directories via Excel.</li>
-                    <li>Generation of professional digital QR access passes.</li>
-                    <li>Real-time authorization scanning for staff members.</li>
-                    <li>Complete privacy with zero central data storage.</li>
-                </ul>
-            </div>
-            <a href="https://play.google.com/store" class="btn">Experience EasyPass</a>
+
+    <div class="content">
+        <h2>App Purpose & Functionality</h2>
+        <p><strong>EasyPass</strong> is a professional membership management application that allows organizations to maintain a secure directory of their members with zero central server costs. The app provides a serverless infrastructure by leveraging the user's own cloud storage.</p>
+        
+        <h2>Core Features</h2>
+        <ul>
+            <li><strong>Automated Directory Sync:</strong> Securely synchronizes your member list directly with a Google Drive folder in Excel format.</li>
+            <li><strong>Digital Pass Generation:</strong> Creates professional QR-based digital access passes for all registered members.</li>
+            <li><strong>Real-time Scanning:</strong> Allows authorized staff to scan and verify member digital passes instantly at entry points.</li>
+        </ul>
+
+        <h2>Google Drive Integration</h2>
+        <p>EasyPass requests access to the <code>.../auth/drive</code> scope to enable bi-directional synchronization between your mobile device and your secure Google Drive data hub. This ensures you maintain 100% ownership and privacy of your organization's data.</p>
+        
+        <div style="text-align: center;">
+            <a href="https://play.google.com/store" class="btn">Download EasyPass on Play Store</a>
         </div>
     </div>
+
     <footer>
         <p>&copy; 2026 Easy-Apps Solutions</p>
         <a href="privacy.html">Privacy Policy</a>
-        <a href="mailto:emad.mpm@gmail.com">Developer Support</a>
+        <a href="mailto:emad.mpm@gmail.com">Contact Developer</a>
     </footer>
+
 </body>
 </html>
