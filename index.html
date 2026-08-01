@@ -3,93 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy-Apps Solutions | Effortless Software</title>
+    <title>EasyPass | Professional Membership Management</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         :root { --mint: #00BFA5; --teal: #006064; --text: #2D3748; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; background: #FFFFFF; color: var(--text); -webkit-font-smoothing: antialiased; }
-        
-        /* Clean Top Navigation */
         nav { padding: 40px; text-align: center; border-bottom: 1px solid #F7FAFC; }
         .brand { font-weight: 800; font-size: 1.5rem; color: var(--teal); letter-spacing: -1px; }
         .brand span { color: var(--mint); }
-
-        /* Bright Hero Section */
-        .hero { padding: 100px 20px 60px 20px; text-align: center; max-width: 800px; margin: auto; }
-        .hero h1 { font-size: 4rem; line-height: 1; letter-spacing: -3px; margin-bottom: 20px; color: var(--teal); }
-        .hero p { font-size: 1.4rem; color: #718096; line-height: 1.5; margin-bottom: 40px; }
+        .hero { padding: 80px 20px 40px 20px; text-align: center; max-width: 800px; margin: auto; }
+        .hero h1 { font-size: 3.5rem; line-height: 1.1; letter-spacing: -2px; margin-bottom: 20px; color: var(--teal); }
+        .hero p { font-size: 1.3rem; color: #718096; line-height: 1.5; margin-bottom: 30px; }
         .highlight { color: var(--mint); }
-
-        /* The Products Grid */
-        .container { max-width: 1000px; margin: auto; padding: 40px 20px 100px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        
-        /* EasyPass Pure Light Card */
-        .card { background: #FFFFFF; border-radius: 48px; padding: 50px; border: 1px solid #EDF2F7; transition: all 0.4s ease; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
-        .card:hover { border-color: var(--mint); transform: translateY(-12px); box-shadow: 0 30px 60px rgba(0, 191, 165, 0.1); }
-        
-        /* Logo Container - The Anchor */
-        .logo-box { width: 100px; height: 100px; background: #000; border-radius: 32px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px auto; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+        .container { max-width: 1000px; margin: auto; padding: 20px 20px 100px 20px; }
+        .card { background: #FFFFFF; border-radius: 48px; padding: 50px; border: 1px solid #EDF2F7; text-align: center; box-shadow: 0 30px 60px rgba(0, 191, 165, 0.05); }
+        .logo-box { width: 100px; height: 100px; background: #000; border-radius: 32px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px auto; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
         .logo-box img { width: 100%; height: 100%; }
-
         .card h2 { font-size: 2.5rem; margin: 0; color: var(--teal); letter-spacing: -1px; }
-        .card .badge { display: inline-block; background: #E6FFFA; color: var(--mint); font-weight: 800; font-size: 0.75rem; padding: 8px 20px; border-radius: 20px; margin: 20px 0; text-transform: uppercase; letter-spacing: 1px; }
-        .card p { font-size: 1.15rem; line-height: 1.6; color: #4A5568; margin-bottom: 40px; }
-        
-        /* Cheerful CTA Button */
+        .card .description { font-size: 1.15rem; line-height: 1.7; color: #4A5568; margin: 25px 0 45px 0; text-align: left; }
         .btn { display: inline-block; background: var(--mint); color: white; padding: 20px 45px; border-radius: 24px; text-decoration: none; font-weight: 800; font-size: 1.1rem; transition: 0.3s; box-shadow: 0 10px 20px rgba(0, 191, 165, 0.2); }
-        .btn:hover { background: var(--teal); transform: scale(1.05); box-shadow: 0 15px 30px rgba(0, 96, 100, 0.3); }
-
-        /* Next Project Placeholder */
-        .next-project { background: #F8FAFC; border: 2px dashed #E2E8F0; border-radius: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 450px; color: #CBD5E0; text-align: center; }
-        .next-project span { font-size: 3rem; margin-bottom: 10px; opacity: 0.5; }
-
+        .btn:hover { background: var(--teal); transform: scale(1.05); }
         footer { padding: 80px 20px; text-align: center; background: #FFFFFF; border-top: 1px solid #EDF2F7; }
         footer p { color: #A0AEC0; margin-bottom: 25px; font-weight: 500; }
-        footer a { color: var(--teal); text-decoration: none; font-weight: 700; margin: 0 15px; font-size: 0.95rem; transition: 0.2s; }
-        footer a:hover { color: var(--mint); }
+        footer a { color: var(--teal); text-decoration: none; font-weight: 700; margin: 0 15px; font-size: 0.95rem; }
     </style>
 </head>
 <body>
-
-    <nav>
-        <div class="brand">Easy-Apps <span>Solutions</span></div>
-    </nav>
-
+    <nav><div class="brand">Easy-Apps <span>Solutions</span></div></nav>
     <div class="hero">
-        <h1>Life is better when it's <span class="highlight">easy.</span></h1>
-        <p>We design lightweight, serverless tools that help you focus on what matters most. Simple, secure, and always effortless.</p>
+        <h1>Welcome to <span class="highlight">EasyPass.</span></h1>
+        <p>A professional membership management suite built for simplicity and data sovereignty.</p>
     </div>
-
     <div class="container">
-        <div class="grid">
-            <!-- EasyPass Flagship Card -->
-            <div class="card">
-                <div class="logo-box">
-                    <img src="logo.png" alt="EasyPass Logo">
-                </div>
-                <h2>EasyPass</h2>
-                <div class="badge">Flagship Solution</div>
-                <p>The smartest serverless membership system. Secured by Google Drive, powered by your phone, and built for total privacy.</p>
-                <a href="https://play.google.com/store" class="btn">Get Started Free</a>
+        <div class="card">
+            <div class="logo-box"><img src="logo.png" alt="EasyPass App Logo"></div>
+            <h2>The EasyPass Solution</h2>
+            <div class="description">
+                <p><strong>EasyPass</strong> is a secure, serverless membership management platform that allows organizations to maintain full ownership of their data. By integrating directly with a user's own <strong>Google Drive</strong> cloud storage, EasyPass provides:</p>
+                <ul>
+                    <li>Bi-directional synchronization of member directories via Excel.</li>
+                    <li>Generation of professional digital QR access passes.</li>
+                    <li>Real-time authorization scanning for staff members.</li>
+                    <li>Complete privacy with zero central data storage.</li>
+                </ul>
             </div>
-
-            <!-- Future Pipeline -->
-            <div class="next-project">
-                <span>✨</span>
-                <strong>Something new is coming</strong>
-                <p style="font-size: 0.9rem; max-width: 200px; margin-top: 10px;">Our engineers are busy crafting the next "Easy" solution.</p>
-            </div>
+            <a href="https://play.google.com/store" class="btn">Experience EasyPass</a>
         </div>
     </div>
-
     <footer>
         <p>&copy; 2026 Easy-Apps Solutions</p>
-        <div style="margin-bottom: 10px;">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="mailto:emad.mpm@gmail.com">Partner With Us</a>
-        </div>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:emad.mpm@gmail.com">Developer Support</a>
     </footer>
-
 </body>
 </html>
