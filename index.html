@@ -4,48 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyPass</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --mint: #00BFA5; --teal: #006064; --text: #1A202C; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; background: #FFFFFF; color: var(--text); text-align: center; }
-        .hero { padding: 100px 20px; background: #000; color: #fff; }
-        .logo { width: 120px; height: 120px; border-radius: 30px; margin-bottom: 20px; }
-        h1 { font-size: 4rem; margin: 0; letter-spacing: -2px; }
-        .tagline { color: var(--mint); font-weight: bold; font-size: 1.2rem; margin-top: 10px; }
-        .container { max-width: 800px; margin: 60px auto; padding: 0 20px; text-align: left; line-height: 1.8; }
-        h2 { color: var(--teal); border-bottom: 1px solid #edf2f7; padding-bottom: 10px; }
-        .btn { display: inline-block; background: var(--mint); color: #000; padding: 20px 45px; border-radius: 50px; text-decoration: none; font-weight: 800; margin-top: 30px; }
-        footer { margin-top: 100px; padding: 40px; border-top: 1px solid #eee; font-size: 0.9rem; color: #A0AEC0; }
-        footer a { color: var(--teal); text-decoration: none; font-weight: bold; }
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px; text-align: center; }
+        .logo { width: 150px; height: 150px; border-radius: 30px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        h1 { font-size: 4rem; margin: 0; color: #000; }
+        .purpose { background: #f9f9f9; padding: 30px; border-radius: 20px; margin-top: 40px; text-align: left; border: 1px solid #eee; }
+        h2 { color: #00BFA5; margin-top: 0; }
+        .btn { display: inline-block; background: #00BFA5; color: #000; padding: 20px 50px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 40px; font-size: 1.2rem; }
+        footer { margin-top: 60px; font-size: 0.8rem; color: #aaa; border-top: 1px solid #eee; padding-top: 20px; }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <img src="logo.png" alt="EasyPass Logo" class="logo">
-        <h1>EasyPass</h1>
-        <div class="tagline">The Official Home of EasyPass</div>
-    </div>
+    <!-- This is the EXACT name Google is looking for -->
+    <img src="logo.png" alt="EasyPass Logo" class="logo">
+    <h1>EasyPass</h1>
+    <p style="font-size: 1.2rem; font-weight: bold; color: #666;">Membership Management Simplified</p>
 
-    <div class="container">
-        <h2>About EasyPass</h2>
-        <p><strong>EasyPass</strong> is a secure membership management application. It provides organizations with a serverless infrastructure by using Google Drive as a private data hub for member directories.</p>
+    <div class="purpose">
+        <h2>Application Purpose</h2>
+        <p><strong>EasyPass</strong> is a mobile application designed to help organizations manage their membership directories and access control without the need for central servers.</p>
         
-        <h2>Key Features</h2>
-        <ul>
-            <li><strong>Google Drive Sync:</strong> Bi-directional synchronization via Excel.</li>
-            <li><strong>Digital Passes:</strong> Instant QR-code generation for authorized members.</li>
-            <li><strong>Member Scanning:</strong> High-speed validation for entry points.</li>
+        <h2>How EasyPass Works</h2>
+        <p>The app provides a serverless infrastructure by using the organization's own <strong>Google Drive</strong> as a private data hub. It allows authorized staff to:</p>
+        <ul style="text-align: left;">
+            <li>Sync member lists securely via Excel files on Google Drive.</li>
+            <li>Issue digital QR passes to registered members.</li>
+            <li>Perform real-time scanning and validation at entry points.</li>
         </ul>
-
-        <div style="text-align: center;">
-            <a href="https://play.google.com/store" class="btn">Get EasyPass</a>
-        </div>
+        <p>By using the <code>.../auth/drive</code> scope, EasyPass ensures that users maintain 100% ownership and privacy of their data within their own Google account.</p>
     </div>
+
+    <a href="https://play.google.com/store" class="btn">Get EasyPass on Play Store</a>
 
     <footer>
-        <p>&copy; 2026 Easy-Apps Solutions</p>
-        <a href="privacy.html">Privacy Policy</a>
+        <p>&copy; 2026 EasyPass | Developed by Easy-Apps Solutions</p>
+        <p><a href="privacy.html" style="color: #666;">Privacy Policy</a></p>
     </footer>
 
 </body>
