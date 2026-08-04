@@ -1,46 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyPass</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px; text-align: center; }
-        .logo { width: 150px; height: 150px; border-radius: 30px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        h1 { font-size: 4rem; margin: 0; color: #000; }
-        .purpose { background: #f9f9f9; padding: 30px; border-radius: 20px; margin-top: 40px; text-align: left; border: 1px solid #eee; }
-        h2 { color: #00BFA5; margin-top: 0; }
-        .btn { display: inline-block; background: #00BFA5; color: #000; padding: 20px 50px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 40px; font-size: 1.2rem; }
-        footer { margin-top: 60px; font-size: 0.8rem; color: #aaa; border-top: 1px solid #eee; padding-top: 20px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EasyPass is a membership management app for creating member directories, issuing QR passes, and verifying membership status.">
+  <title>EasyPass | Membership Management and QR Verification</title>
+  <style>
+    :root {
+      --primary: #00796b;
+      --accent: #00bfa5;
+      --dark: #102321;
+      --text: #263238;
+      --muted: #52646a;
+      --surface: #f4fbf9;
+      --border: #dce8e5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.65;
+    }
+
+    a { color: var(--primary); }
+
+    header {
+      background: var(--dark);
+      color: #ffffff;
+      padding: 64px 20px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 24px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 7vw, 4rem);
+      letter-spacing: -1.5px;
+    }
+
+    .tagline {
+      max-width: 760px;
+      margin: 16px auto 0;
+      font-size: 1.15rem;
+      color: #d6ebe7;
+    }
+
+    nav {
+      margin-top: 28px;
+    }
+
+    nav a {
+      color: #ffffff;
+      margin: 0 10px;
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 20px 64px;
+    }
+
+    section {
+      margin-bottom: 44px;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .summary {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      font-size: 1.08rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--dark);
+    }
+
+    .google-access {
+      border-left: 5px solid var(--accent);
+      background: #f7fffd;
+      padding: 22px;
+    }
+
+    .important {
+      font-weight: 700;
+    }
+
+    footer {
+      background: #f5f7f7;
+      border-top: 1px solid var(--border);
+      padding: 30px 20px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    footer a {
+      margin: 0 8px;
+      font-weight: 700;
+    }
+  </style>
 </head>
 <body>
-
-    <!-- This is the EXACT name Google is looking for -->
-    <img src="logo.png" alt="EasyPass Logo" class="logo">
+  <header>
+    <img src="logo.png" alt="EasyPass logo" class="logo">
     <h1>EasyPass</h1>
-    <p style="font-size: 1.2rem; font-weight: bold; color: #666;">Membership Management Simplified</p>
+    <p class="tagline">
+      A membership management application that helps organizations maintain member
+      directories, issue digital QR membership passes, and verify membership status
+      at entry points.
+    </p>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#google-drive">Google Drive Access</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </header>
 
-    <div class="purpose">
-        <h2>Application Purpose</h2>
-        <p><strong>EasyPass</strong> is a mobile application designed to help organizations manage their membership directories and access control without the need for central servers.</p>
-        
-        <h2>How EasyPass Works</h2>
-        <p>The app provides a serverless infrastructure by using the organization's own <strong>Google Drive</strong> as a private data hub. It allows authorized staff to:</p>
-        <ul style="text-align: left;">
-            <li>Sync member lists securely via Excel files on Google Drive.</li>
-            <li>Issue digital QR passes to registered members.</li>
-            <li>Perform real-time scanning and validation at entry points.</li>
-        </ul>
-        <p>By using the <code>.../auth/drive</code> scope, EasyPass ensures that users maintain 100% ownership and privacy of their data within their own Google account.</p>
-    </div>
+  <main>
+    <section id="about">
+      <h2>What EasyPass Does</h2>
+      <div class="summary">
+        <strong>EasyPass</strong> is designed for organizations that need a practical
+        way to create, update, synchronize, and verify membership records. Authorized
+        users can manage a member directory from supported devices, generate QR-based
+        membership passes, and scan those passes to confirm membership status.
+      </div>
+    </section>
 
-    <a href="https://play.google.com/store" class="btn">Get EasyPass on Play Store</a>
+    <section>
+      <h2>Main Features</h2>
+      <div class="features">
+        <article class="card">
+          <h3>Member Directory</h3>
+          <p>
+            Create and maintain membership records, including the information required
+            by the organization to identify and manage its members.
+          </p>
+        </article>
 
-    <footer>
-        <p>&copy; 2026 EasyPass | Developed by Easy-Apps Solutions</p>
-        <p><a href="privacy.html" style="color: #666;">Privacy Policy</a></p>
-    </footer>
+        <article class="card">
+          <h3>QR Membership Passes</h3>
+          <p>
+            Generate digital QR passes associated with membership records for convenient
+            presentation and verification.
+          </p>
+        </article>
 
+        <article class="card">
+          <h3>Membership Verification</h3>
+          <p>
+            Allow authorized staff to scan a member's QR pass and verify the member's
+            current status.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Google Drive Synchronization</h3>
+          <p>
+            Store and synchronize EasyPass membership files using the Google Drive
+            account authorized by the user.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="google-drive" class="google-access">
+      <h2>Why EasyPass Requests Google Drive Access</h2>
+      <p>
+        EasyPass uses Google Drive only to provide its membership-data storage and
+        synchronization functionality. After a user grants permission, EasyPass may
+        read, create, update, and synchronize the files used by the application, such
+        as the membership database and application configuration files.
+      </p>
+      <p>
+        Google Drive data is used only for user-requested EasyPass features. It is not
+        used for advertising, profiling, or sale. Access can be revoked at any time
+        from the user's Google Account permissions.
+      </p>
+      <p class="important">
+        EasyPass only requests Google permissions that are required for its declared
+        functionality.
+      </p>
+      <p>
+        For complete details about the information EasyPass accesses and how it is
+        handled, read the <a href="privacy.html">EasyPass Privacy Policy</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Who Operates EasyPass</h2>
+      <p>
+        EasyPass is developed and operated by <strong>Easy-Apps Solutions</strong>.
+        Privacy and support inquiries may be sent to
+        <a href="mailto:emad.mpm@gmail.com">emad.mpm@gmail.com</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Easy-Apps Solutions. EasyPass is a product of Easy-Apps Solutions.</p>
+    <p>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="mailto:emad.mpm@gmail.com">Contact Support</a>
+    </p>
+  </footer>
 </body>
 </html>
