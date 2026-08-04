@@ -3,59 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyPass | Membership Management Simplified</title>
+    <title>EasyPass</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --mint: #00BFA5; --teal: #006064; --text: #2D3748; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; background: #FFFFFF; color: var(--text); -webkit-font-smoothing: antialiased; }
-        nav { padding: 40px; text-align: center; border-bottom: 1px solid #F7FAFC; }
-        .brand { font-weight: 800; font-size: 1.5rem; color: var(--teal); letter-spacing: -1px; }
-        .brand span { color: var(--mint); }
-        .hero { padding: 100px 20px 40px 20px; text-align: center; max-width: 900px; margin: auto; }
-        .hero h1 { font-size: 4rem; line-height: 1.1; letter-spacing: -3px; margin-bottom: 25px; color: var(--teal); }
-        .hero p { font-size: 1.4rem; color: #718096; line-height: 1.5; margin-bottom: 40px; }
-        .highlight { color: var(--mint); }
-        .container { max-width: 1000px; margin: auto; padding: 20px 20px 100px 20px; }
-        .card { background: #FFFFFF; border-radius: 56px; padding: 60px; border: 1px solid #EDF2F7; text-align: center; box-shadow: 0 40px 80px rgba(0, 191, 165, 0.08); }
-        .logo-box { width: 120px; height: 120px; margin: 0 auto 40px auto; }
-        .logo-box img { width: 100%; height: 100%; border-radius: 36px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .card h2 { font-size: 2.8rem; margin: 0; color: var(--teal); letter-spacing: -1.5px; }
-        .description { font-size: 1.2rem; line-height: 1.8; color: #4A5568; margin-bottom: 50px; max-width: 750px; margin-left: auto; margin-right: auto; text-align: left; }
-        .btn { display: inline-block; background: var(--mint); color: white; padding: 22px 50px; border-radius: 28px; text-decoration: none; font-weight: 800; font-size: 1.1rem; transition: 0.3s; box-shadow: 0 15px 30px rgba(0, 191, 165, 0.2); }
-        .btn:hover { background: var(--teal); transform: translateY(-3px); }
-        footer { padding: 80px 20px; text-align: center; background: #FFFFFF; border-top: 1px solid #EDF2F7; }
-        footer a { color: var(--teal); text-decoration: none; font-weight: 700; margin: 0 20px; font-size: 1rem; }
+        :root { --mint: #00BFA5; --teal: #006064; --text: #1A202C; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; background: #FFFFFF; color: var(--text); text-align: center; }
+        .hero { padding: 100px 20px; background: #000; color: #fff; }
+        .logo { width: 120px; height: 120px; border-radius: 30px; margin-bottom: 20px; }
+        h1 { font-size: 4rem; margin: 0; letter-spacing: -2px; }
+        .tagline { color: var(--mint); font-weight: bold; font-size: 1.2rem; margin-top: 10px; }
+        .container { max-width: 800px; margin: 60px auto; padding: 0 20px; text-align: left; line-height: 1.8; }
+        h2 { color: var(--teal); border-bottom: 1px solid #edf2f7; padding-bottom: 10px; }
+        .btn { display: inline-block; background: var(--mint); color: #000; padding: 20px 45px; border-radius: 50px; text-decoration: none; font-weight: 800; margin-top: 30px; }
+        footer { margin-top: 100px; padding: 40px; border-top: 1px solid #eee; font-size: 0.9rem; color: #A0AEC0; }
+        footer a { color: var(--teal); text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
-    <nav><div class="brand">Easy-Apps <span>Solutions</span></div></nav>
+
     <div class="hero">
-        <h1>Welcome to <span class="highlight">EasyPass.</span></h1>
-        <p>A professional serverless membership system designed for simplicity and data sovereignty.</p>
+        <img src="logo.png" alt="EasyPass Logo" class="logo">
+        <h1>EasyPass</h1>
+        <div class="tagline">The Official Home of EasyPass</div>
     </div>
+
     <div class="container">
-        <div class="card">
-            <div class="logo-box"><img src="logo.png" alt="EasyPass Logo"></div>
-            <h2>The EasyPass Solution</h2>
-            <div class="description">
-                <p><strong>EasyPass</strong> is a secure, serverless membership management platform. We eliminate complex server costs by using your own <strong>Google Drive</strong> cloud as a private data hub.</p>
-                <p>Key Functionalities:</p>
-                <ul>
-                    <li>Real-time synchronization of member directories via Excel.</li>
-                    <li>Professional QR pass generation for organizations.</li>
-                    <li>Authorized entrance scanning and member validation.</li>
-                    <li>Full data ownership with zero central servers.</li>
-                </ul>
-            </div>
-            <a href="https://play.google.com/store" class="btn">Get EasyPass on Play Store</a>
+        <h2>About EasyPass</h2>
+        <p><strong>EasyPass</strong> is a secure membership management application. It provides organizations with a serverless infrastructure by using Google Drive as a private data hub for member directories.</p>
+        
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Google Drive Sync:</strong> Bi-directional synchronization via Excel.</li>
+            <li><strong>Digital Passes:</strong> Instant QR-code generation for authorized members.</li>
+            <li><strong>Member Scanning:</strong> High-speed validation for entry points.</li>
+        </ul>
+
+        <div style="text-align: center;">
+            <a href="https://play.google.com/store" class="btn">Get EasyPass</a>
         </div>
     </div>
+
     <footer>
-        <p>&copy; 2026 Easy-Apps Solutions | Built for Simplicity</p>
-        <div style="margin-top: 10px;">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="mailto:emad.mpm@gmail.com">Contact Developer</a>
-        </div>
+        <p>&copy; 2026 Easy-Apps Solutions</p>
+        <a href="privacy.html">Privacy Policy</a>
     </footer>
+
 </body>
 </html>
