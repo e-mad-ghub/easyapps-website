@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="EasyPass is an Android membership management app that stores and synchronizes membership records in the user's Google Drive, creates QR membership passes, and verifies members at entry points.">
-  <title>EasyPass – Membership Management with Google Drive and QR Verification</title>
+  <meta name="description" content="EasyPass is a membership management app for creating member directories, issuing QR passes, and verifying membership status.">
+  <title>EasyPass | Membership Management and QR Verification</title>
   <style>
     :root {
-      --green: #00796b;
+      --primary: #00796b;
       --accent: #00bfa5;
       --dark: #102321;
       --text: #263238;
       --muted: #52646a;
-      --light: #f2fbf8;
-      --border: #d8e7e3;
+      --surface: #f4fbf9;
+      --border: #dce8e5;
     }
 
     * { box-sizing: border-box; }
@@ -22,126 +22,105 @@
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: #fff;
+      background: #ffffff;
       line-height: 1.65;
     }
 
-    a { color: var(--green); }
+    a { color: var(--primary); }
 
     header {
-      padding: 54px 20px 48px;
-      text-align: center;
-      color: #fff;
       background: var(--dark);
+      color: #ffffff;
+      padding: 64px 20px;
+      text-align: center;
     }
 
     .logo {
-      width: 112px;
-      height: 112px;
+      width: 120px;
+      height: 120px;
       object-fit: contain;
-      border-radius: 22px;
+      border-radius: 24px;
+      margin-bottom: 18px;
     }
 
     h1 {
-      margin: 15px 0 6px;
-      font-size: clamp(2.6rem, 8vw, 4.2rem);
+      margin: 0;
+      font-size: clamp(2.4rem, 7vw, 4rem);
+      letter-spacing: -1.5px;
     }
 
-    .product-label {
-      margin: 0;
+    .tagline {
+      max-width: 760px;
+      margin: 16px auto 0;
       font-size: 1.15rem;
-      font-weight: 700;
-      color: #b9eee5;
+      color: #d6ebe7;
     }
 
-    .purpose {
-      max-width: 850px;
-      margin: 25px auto 0;
-      padding: 22px;
-      border: 2px solid var(--accent);
-      border-radius: 12px;
-      background: #fff;
-      color: var(--text);
-      text-align: left;
+    nav {
+      margin-top: 28px;
     }
-
-    .purpose h2 {
-      margin: 0 0 8px;
-      color: var(--green);
-      font-size: 1.55rem;
-    }
-
-    .purpose p {
-      margin: 0;
-      font-size: 1.12rem;
-    }
-
-    nav { margin-top: 28px; }
 
     nav a {
+      color: #ffffff;
       margin: 0 10px;
-      color: #fff;
       font-weight: 700;
     }
 
     main {
       max-width: 960px;
-      margin: auto;
+      margin: 0 auto;
       padding: 48px 20px 64px;
     }
 
-    section { margin-bottom: 46px; }
+    section {
+      margin-bottom: 44px;
+    }
 
-    h2 { color: var(--green); }
+    h2 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
 
-    .workflow,
-    .drive-box {
+    .summary {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
       padding: 24px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--light);
+      font-size: 1.08rem;
     }
 
-    .steps {
+    .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 16px;
-      padding: 0;
-      list-style: none;
-      counter-reset: step;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
     }
 
-    .steps li {
-      padding: 20px;
+    .card {
       border: 1px solid var(--border);
-      border-radius: 12px;
-      background: #fff;
+      border-radius: 14px;
+      padding: 22px;
     }
 
-    .steps li::before {
-      counter-increment: step;
-      content: counter(step);
-      display: inline-grid;
-      place-items: center;
-      width: 32px;
-      height: 32px;
-      margin-bottom: 10px;
-      border-radius: 50%;
-      background: var(--green);
-      color: #fff;
+    .card h3 {
+      margin-top: 0;
+      color: var(--dark);
+    }
+
+    .google-access {
+      border-left: 5px solid var(--accent);
+      background: #f7fffd;
+      padding: 22px;
+    }
+
+    .important {
       font-weight: 700;
     }
 
-    .notice {
-      padding-left: 18px;
-      border-left: 5px solid var(--accent);
-    }
-
     footer {
-      padding: 30px 20px;
-      text-align: center;
       background: #f5f7f7;
       border-top: 1px solid var(--border);
+      padding: 30px 20px;
+      text-align: center;
       color: var(--muted);
     }
 
@@ -153,93 +132,97 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="EasyPass application logo" class="logo">
+    <img src="logo.png" alt="EasyPass logo" class="logo">
     <h1>EasyPass</h1>
-    <p class="product-label">Android Membership Management Application</p>
-
-    <div class="purpose">
-      <h2>Purpose of the EasyPass App</h2>
-      <p>
-        <strong>EasyPass helps organizations manage and verify their members.</strong>
-        The app lets an authorized organization administrator create and update a
-        membership directory, store and synchronize that directory in the
-        administrator's Google Drive, generate QR membership passes, and scan those
-        passes to confirm whether a person has an active membership.
-      </p>
-    </div>
-
+    <p class="tagline">
+      A membership management application that helps organizations maintain member
+      directories, issue digital QR membership passes, and verify membership status
+      at entry points.
+    </p>
     <nav aria-label="Main navigation">
-      <a href="#how-it-works">How It Works</a>
-      <a href="#google-drive">Google Drive Use</a>
+      <a href="#about">About</a>
+      <a href="#google-drive">Google Drive Access</a>
       <a href="privacy.html">Privacy Policy</a>
     </nav>
   </header>
 
   <main>
-    <section id="how-it-works">
-      <h2>How EasyPass Works</h2>
-      <ol class="steps">
-        <li>
-          <strong>Create member records</strong>
-          <p>An authorized administrator adds and maintains the organization's membership information.</p>
-        </li>
-        <li>
-          <strong>Store and synchronize</strong>
-          <p>EasyPass saves and synchronizes its membership files using a Google Drive account authorized by the user.</p>
-        </li>
-        <li>
-          <strong>Issue QR passes</strong>
-          <p>The organization generates a digital QR pass associated with each member record.</p>
-        </li>
-        <li>
-          <strong>Verify membership</strong>
-          <p>Authorized staff scan the QR pass to retrieve and confirm the member's current status.</p>
-        </li>
-      </ol>
+    <section id="about">
+      <h2>What EasyPass Does</h2>
+      <div class="summary">
+        <strong>EasyPass</strong> is designed for organizations that need a practical
+        way to create, update, synchronize, and verify membership records. Authorized
+        users can manage a member directory from supported devices, generate QR-based
+        membership passes, and scan those passes to confirm membership status.
+      </div>
     </section>
 
     <section>
-      <h2>Intended Users</h2>
-      <p>
-        EasyPass is intended for organizations, clubs, associations, facilities, and
-        their authorized administrators or entry staff. It is not a general-purpose
-        Google Drive file manager. Google Drive access is used specifically for
-        EasyPass membership storage and synchronization.
-      </p>
+      <h2>Main Features</h2>
+      <div class="features">
+        <article class="card">
+          <h3>Member Directory</h3>
+          <p>
+            Create and maintain membership records, including the information required
+            by the organization to identify and manage its members.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>QR Membership Passes</h3>
+          <p>
+            Generate digital QR passes associated with membership records for convenient
+            presentation and verification.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Membership Verification</h3>
+          <p>
+            Allow authorized staff to scan a member's QR pass and verify the member's
+            current status.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Google Drive Synchronization</h3>
+          <p>
+            Store and synchronize EasyPass membership files using the Google Drive
+            account authorized by the user.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <section id="google-drive" class="drive-box">
-      <h2>Why EasyPass Requests Google Drive Data</h2>
+    <section id="google-drive" class="google-access">
+      <h2>Why EasyPass Requests Google Drive Access</h2>
       <p>
-        EasyPass requests Google Drive permission so the user can use their own Google
-        account as the storage location for the EasyPass membership database and
-        configuration files.
-      </p>
-      <p>After the user grants permission, EasyPass uses Google Drive access to:</p>
-      <ul>
-        <li>Create or locate EasyPass application files.</li>
-        <li>Read membership records so they can be displayed and verified.</li>
-        <li>Write changes made by an authorized administrator.</li>
-        <li>Synchronize the same membership directory across authorized devices.</li>
-      </ul>
-      <p class="notice">
-        Google Drive data is used only to provide these EasyPass features. EasyPass
-        does not use Google Drive data for advertising, sell it, or use it to build
-        marketing profiles. Users can revoke access from their Google Account.
+        EasyPass uses Google Drive only to provide its membership-data storage and
+        synchronization functionality. After a user grants permission, EasyPass may
+        read, create, update, and synchronize the files used by the application, such
+        as the membership database and application configuration files.
       </p>
       <p>
-        See the <a href="privacy.html">EasyPass Privacy Policy</a> for full details
-        about data access, use, storage, sharing, retention, deletion, and user control.
+        Google Drive data is used only for user-requested EasyPass features. It is not
+        used for advertising, profiling, or sale. Access can be revoked at any time
+        from the user's Google Account permissions.
+      </p>
+      <p class="important">
+        EasyPass only requests Google permissions that are required for its declared
+        functionality.
+      </p>
+      <p>
+        For complete details about the information EasyPass accesses and how it is
+        handled, read the <a href="privacy.html">EasyPass Privacy Policy</a>.
       </p>
     </section>
 
     <section>
-      <h2>Application Identity and Contact</h2>
+      <h2>Who Operates EasyPass</h2>
       <p>
-        <strong>Application name:</strong> EasyPass<br>
-        <strong>Developer and operator:</strong> Easy-Apps Solutions<br>
-        <strong>Support and privacy contact:</strong>
-        <a href="mailto:emad.mpm@gmail.com">emad.mpm@gmail.com</a>
+        EasyPass is developed and operated by <strong>Easy-Apps Solutions</strong>.
+        Privacy and support inquiries may be sent to
+        <a href="mailto:emad.mpm@gmail.com">emad.mpm@gmail.com</a>.
       </p>
     </section>
   </main>
@@ -247,9 +230,9 @@
   <footer>
     <p>&copy; 2026 Easy-Apps Solutions. EasyPass is a product of Easy-Apps Solutions.</p>
     <p>
-      <a href="/">EasyPass Home</a>
+      <a href="index.html">Home</a>
       <a href="privacy.html">Privacy Policy</a>
-      <a href="mailto:emad.mpm@gmail.com">Contact</a>
+      <a href="mailto:emad.mpm@gmail.com">Contact Support</a>
     </p>
   </footer>
 </body>
