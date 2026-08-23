@@ -16,7 +16,7 @@
     main { max-width: 980px; margin: -34px auto 0; padding: 0 20px 70px; position: relative; }
     .apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
     .card { padding: 30px; background: white; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 14px 35px rgba(16, 35, 33, .08); }
-    .mark { display: inline-grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; color: white; background: var(--ink); font-size: 1.35rem; font-weight: 700; }
+    .app-icon { width: 52px; height: 52px; border-radius: 14px; object-fit: cover; }
     h2 { margin: 22px 0 8px; font-size: 1.7rem; }
     .card p { color: var(--muted); margin: 0 0 22px; }
     .button { display: inline-block; padding: 11px 18px; border-radius: 999px; color: var(--ink); background: var(--mint); font-weight: 700; text-decoration: none; }
@@ -27,14 +27,14 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="EasyApps logo" class="logo">
+    <img src="easyapps-logo.png" alt="EasyApps logo" class="logo">
     <h1>EasyApps</h1>
     <p class="intro">A growing collection of focused apps designed to make everyday tasks simpler, clearer, and more private.</p>
   </header>
   <main>
     <section class="apps" aria-label="Our apps">
-      <article class="card"><span class="mark" aria-hidden="true">E</span><h2>EasyPass</h2><p>Manage member directories, create digital QR membership passes, and verify membership status at entry points.</p><a class="button" href="easypass/">Explore EasyPass</a></article>
-      <article class="card"><span class="mark" aria-hidden="true">QR</span><h2>easyQR</h2><p>Create and scan QR codes quickly with a straightforward experience for sharing information and links.</p><a class="button" href="easyqr/">Explore easyQR</a></article>
+      <article class="card"><img src="logo.png" alt="EasyPass logo" class="app-icon"><h2>EasyPass</h2><p>Manage member directories, create digital QR membership passes, and verify membership status at entry points.</p><a class="button" href="easypass/">Explore EasyPass</a></article>
+      <article class="card"><h2>easyQR</h2><p>Create and scan QR codes quickly with a straightforward experience for sharing information and links.</p><a class="button" href="easyqr/">Explore easyQR</a></article>
     </section>
     <p class="note">More useful tools are on the way. Each app has its own page with the details and support information you need.</p>
   </main>
