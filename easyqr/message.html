@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'unsafe-inline'; img-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+  <meta name="description" content="Read a private easyQR Smart Message directly in your browser.">
+  <title>easyQR Smart Message</title>
+  <style>
+    :root {
+      --ink: #102321;
+      --muted: #52646a;
+      --line: #d9e9e4;
+      --primary: #00796b;
+      --accent: #00bfa5;
+      --surface: #fbfefd;
+      --error: #8a1f11;
+      --error-bg: #fff4f1;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--surface);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: var(--primary); }
+
+    a:focus-visible,
+    button:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    header {
+      padding: 52px 20px 74px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #102321, #17483f 68%, #00796b);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 7vw, 4.2rem);
+      letter-spacing: -1px;
+    }
+
+    .tagline {
+      max-width: 650px;
+      margin: 12px auto 0;
+      color: #d9efea;
+      font-size: 1.08rem;
+    }
+
+    main {
+      max-width: 860px;
+      margin: -34px auto 0;
+      padding: 0 20px 70px;
+      position: relative;
+    }
+
+    .panel {
+      padding: clamp(24px, 6vw, 38px);
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 14px 35px rgba(16, 35, 33, .08);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .message-title {
+      margin: 0 0 18px;
+      font-size: clamp(1.8rem, 6vw, 3rem);
+      line-height: 1.15;
+      overflow-wrap: anywhere;
+    }
+
+    .message-body {
+      margin: 0;
+      color: #263238;
+      font-size: clamp(1.08rem, 3vw, 1.25rem);
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .shared-note {
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 11px 18px;
+      border: 0;
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--accent);
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button.secondary {
+      color: var(--primary);
+      background: #e8f7f4;
+    }
+
+    .status {
+      min-height: 1.5em;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .fallback-copy {
+      display: none;
+      margin-top: 18px;
+    }
+
+    .fallback-copy.is-visible { display: block; }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--ink);
+      font: inherit;
+      resize: vertical;
+    }
+
+    .error-panel {
+      border-left: 5px solid var(--error);
+      background: var(--error-bg);
+    }
+
+    .error-panel h2 {
+      margin: 0 0 12px;
+      color: var(--error);
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+    }
+
+    .error-panel p { margin: 0 0 14px; }
+
+    footer {
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 560px) {
+      header { padding-top: 44px; }
+      .actions { display: grid; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>easyQR</h1>
+    <p class="tagline">Smart Message QR codes are opened and decoded locally in your browser.</p>
+  </header>
+
+  <main>
+    <section id="app" class="panel error-panel" aria-live="polite">
+      <h2>Message reader loading</h2>
+      <p>If this message remains visible, the easyQR Smart Message reader could not load.</p>
+      <p><a href="./">Back to easyQR</a></p>
+    </section>
+
+    <noscript>
+      <section class="panel error-panel">
+        <h2>JavaScript is required</h2>
+        <p>easyQR Smart Messages are decoded locally in your browser and require JavaScript to read the QR message fragment.</p>
+      </section>
+    </noscript>
+  </main>
+
+  <footer>&copy; 2026 Easy-Apps Solutions. <a href="mailto:emad.mpm@gmail.com">Contact support</a></footer>
+
+  <script src="message.js"></script>
+  <script src="message-page.js"></script>
+</body>
+</html>
