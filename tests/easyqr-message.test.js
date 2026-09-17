@@ -10,6 +10,12 @@ function encodePayload(value) {
     .replace(/=+$/g, "");
 }
 
+test("does not render easyQR attribution inside the message board", () => {
+  const pageScript = require("node:fs").readFileSync(require("node:path").join(__dirname, "../easyqr/message-page.js"), "utf8");
+  assert.equal(pageScript.includes("This message was shared with easyQR"), false);
+  assert.equal(pageScript.includes("shared-note"), false);
+});
+
 test("decodes Base64URL UTF-8 text", () => {
   const encoded = Buffer.from("Hello easyQR", "utf8").toString("base64url");
   assert.equal(smartMessage.decodeBase64UrlUtf8(encoded), "Hello easyQR");

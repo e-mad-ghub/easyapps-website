@@ -43,11 +43,6 @@
     body.textContent = message.body;
     app.appendChild(body);
 
-    var note = document.createElement("p");
-    note.className = "shared-note";
-    note.textContent = "This message was shared with easyQR.";
-    app.appendChild(note);
-
     var actions = document.createElement("div");
     actions.className = "actions";
     actions.setAttribute("aria-label", "Message actions");

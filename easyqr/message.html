@@ -38,7 +38,7 @@
     }
 
     header {
-      padding: 52px 20px 74px;
+      padding: 44px 20px 86px;
       text-align: center;
       color: white;
       background: linear-gradient(135deg, #102321, #17483f 68%, #00796b);
@@ -58,18 +58,18 @@
     }
 
     main {
-      max-width: 860px;
-      margin: -34px auto 0;
+      max-width: 920px;
+      margin: -48px auto 0;
       padding: 0 20px 70px;
       position: relative;
     }
 
     .panel {
-      padding: clamp(24px, 6vw, 38px);
+      padding: clamp(28px, 6vw, 48px);
       background: white;
       border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: 0 14px 35px rgba(16, 35, 33, .08);
+      border-radius: 22px;
+      box-shadow: 0 20px 48px rgba(16, 35, 33, .12);
     }
 
     .eyebrow {
@@ -80,25 +80,22 @@
     }
 
     .message-title {
-      margin: 0 0 18px;
-      font-size: clamp(1.8rem, 6vw, 3rem);
-      line-height: 1.15;
+      margin: 0 0 20px;
+      color: #071614;
+      font-size: clamp(2rem, 7vw, 3.7rem);
+      line-height: 1.08;
       overflow-wrap: anywhere;
     }
 
     .message-body {
       margin: 0;
-      color: #263238;
-      font-size: clamp(1.08rem, 3vw, 1.25rem);
+      color: #172724;
+      font-size: clamp(1.2rem, 3.3vw, 1.48rem);
+      line-height: 1.72;
       white-space: pre-wrap;
       overflow-wrap: anywhere;
     }
 
-    .shared-note {
-      margin: 26px 0 0;
-      color: var(--muted);
-      font-weight: 700;
-    }
 
     .actions {
       display: flex;
@@ -175,6 +172,10 @@
 
     @media (max-width: 560px) {
       header { padding-top: 44px; }
+      main {
+        margin-top: -42px;
+        padding-inline: 14px;
+      }
       .actions { display: grid; }
       .button { width: 100%; }
     }
