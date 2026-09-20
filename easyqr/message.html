@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'unsafe-inline'; img-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
   <meta name="description" content="Read a private easyQR Smart Message directly in your browser.">
   <title>easyQR Smart Message</title>
   <style>
@@ -38,10 +38,20 @@
     }
 
     header {
-      padding: 44px 20px 86px;
+      padding: 48px 20px 86px;
       text-align: center;
       color: white;
-      background: linear-gradient(135deg, #102321, #17483f 68%, #00796b);
+      background:
+        radial-gradient(circle at 18% 18%, rgba(0, 191, 165, .28), transparent 30%),
+        linear-gradient(135deg, #102321, #17483f 68%, #00796b);
+    }
+
+    .icon {
+      width: 104px;
+      height: 104px;
+      border-radius: 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, .22);
     }
 
     h1 {
@@ -183,6 +193,7 @@
 </head>
 <body>
   <header>
+    <img src="easyqr-icon.png?v=2" alt="easyQR app icon" class="icon">
     <h1>easyQR</h1>
     <p class="tagline">Smart Message QR codes are opened and decoded locally in your browser.</p>
   </header>
@@ -202,9 +213,14 @@
     </noscript>
   </main>
 
-  <footer>&copy; 2026 Easy-Apps Solutions. <a href="mailto:emad.mpm@gmail.com">Contact support</a></footer>
+  <footer>
+    &copy; 2026 Easy-Apps Solutions.
+    <a href="./">easyQR Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="mailto:support@easyapps-solutions.com">Contact</a>
+  </footer>
 
-  <script src="message.js"></script>
-  <script src="message-page.js"></script>
+  <script src="message.js?v=20260917"></script>
+  <script src="message-page.js?v=20260917"></script>
 </body>
 </html>
