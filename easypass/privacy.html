@@ -63,7 +63,7 @@
 <body>
   <header>
     <h1>easyPass Privacy Policy</h1>
-    <p class="updated"><strong>Effective date:</strong> August 4, 2026</p>
+    <p class="updated"><strong>Effective date:</strong> October 25, 2026</p>
     <p>
       This Privacy Policy explains how <strong>easyPass</strong>, operated by
       <strong>Easy-Apps Solutions</strong>, accesses, uses, stores, protects, and
@@ -86,25 +86,36 @@
 
   <h2>1. Information easyPass Accesses</h2>
   <p>
-    easyPass may request authorization to access Google Drive. Depending on the
-    permissions displayed on the Google consent screen, this access may allow easyPass
-    to create, locate, read, update, and synchronize files used for the application's
-    membership-management functionality.
+    easyPass requests your Google account email for sign-in and to check whether your
+    account is authorized to access an organization and use a particular role. Its
+    Google sign-in configuration also requests an account identifier and basic profile
+    information, such as your name and profile photo, which Google may return with
+    the sign-in result.
   </p>
-  <p>The Google Drive information accessed by easyPass may include:</p>
+  <p>
+    easyPass requests the per-file Google Drive permission <code>drive.file</code>.
+    It accesses files you select or authorize through Google Picker and files the app
+    creates, subject to your Google Drive permissions. This does not grant access to
+    every file in your Drive. Information accessed may include:
+  </p>
   <ul>
     <li>easyPass membership database files, such as <code>database.xlsx</code>.</li>
     <li>easyPass configuration files, such as <code>config.json</code>.</li>
-    <li>File names, identifiers, modification dates, and other metadata required to locate and synchronize those files.</li>
-    <li>The contents of easyPass files needed to display, update, synchronize, or verify membership records.</li>
+    <li>Organization folders and branding or logo files selected or created for use with easyPass.</li>
+    <li>File names, identifiers, parent folders, trash status, sharing permissions, and access capabilities needed to locate, manage, and synchronize organization files.</li>
+    <li>Membership records: member names and IDs, membership status, QR pass credentials, update timestamps, and optional phone numbers, email addresses, addresses, and notes.</li>
+    <li>Organization configuration: settings, the storage owner's email, authorized account emails, roles and access status, Drive permission IDs, role password hashes, organization name, colors and logo references, and optional-field settings.</li>
+    <li>Pro status and, where present, the Google Play purchase token and activation timestamp stored in the organization's configuration.</li>
   </ul>
 
   <h2>2. How Google User Data Is Used</h2>
-  <p>easyPass uses Google user data only to provide and improve user-facing application functionality, including:</p>
+  <p>easyPass uses Google user data to provide user-facing application functionality, including:</p>
   <ul>
-    <li>Saving and loading the organization's easyPass membership database.</li>
+    <li>Signing in and checking the signed-in email against the organization's authorized accounts and roles.</li>
+    <li>Creating, loading, updating, and managing the organization's easyPass files and membership records.</li>
     <li>Synchronizing membership records across devices authorized by the organization.</li>
-    <li>Storing and retrieving easyPass configuration and organizational branding settings.</li>
+    <li>Storing, retrieving, and displaying organization settings, branding, logos, and Pro status.</li>
+    <li>Managing invitations and file-level Drive access for authorized organization accounts.</li>
     <li>Supporting membership management, QR-pass generation, and membership verification.</li>
     <li>Diagnosing errors directly related to the storage or synchronization features.</li>
   </ul>
@@ -115,40 +126,52 @@
 
   <h2>3. Storage and Processing</h2>
   <p>
-    easyPass stores its Google Drive files in the Google account authorized by the
-    user. The application may also keep a local copy or cache on the user's device so
-    that the app can operate and synchronize correctly.
+    Google Drive is easyPass's provider for organization-file storage and
+    synchronization. Organization files are stored in the Google Drive account and
+    folder chosen for the organization, under the storage owner's control. Authorized
+    members access those shared files using their own approved Google accounts.
   </p>
   <p>
-    Easy-Apps Solutions does not operate a central membership-content database unless
-    this statement is later updated to describe such a service. Google authentication
-    tokens may be stored securely on the user's device as required to maintain the
-    authorized connection.
+    The app also stores membership records in an Android app-private local database
+    and uses app-private preferences and cache files for connection settings,
+    synchronization, and exports. Membership content is synchronized between the app
+    and Google Drive; Easy-Apps Solutions does not operate a central membership-content
+    database for this functionality.
   </p>
 
   <h2>4. Data Sharing, Transfer, and Disclosure</h2>
   <p>
-    Easy-Apps Solutions does not sell Google user data. easyPass does not share,
-    transfer, or disclose Google user data to third parties except:
+    Easy-Apps Solutions does not sell Google user data or share it for advertising.
+    easyPass transfers organization files and related metadata to and from Google
+    Drive to provide storage and synchronization. Data may also be disclosed:
   </p>
   <ul>
-    <li>When the user or organization explicitly directs or authorizes the disclosure.</li>
+    <li>To authorized organization members: the storage owner can use easyPass to grant file-level Google Drive access to the organization's database, configuration, and logo. Read or write access depends on the member's role and the permissions on each file. For example, Scanners receive read access, Managers can update the membership database, and Directors can also update configuration and branding.</li>
+    <li>When the user or organization explicitly directs or authorizes another disclosure, such as sharing a QR pass or exporting membership records.</li>
     <li>When required to comply with applicable law, legal process, or a valid governmental request.</li>
     <li>When necessary to protect users, the public, Easy-Apps Solutions, or the security and integrity of easyPass, where permitted by law.</li>
   </ul>
   <p>
-    easyPass does not allow humans to read Google user data unless the user has given
-    explicit permission for support or troubleshooting, access is required for security
-    purposes, access is required by law, or the data has been aggregated and anonymized
-    for internal operations where permitted by Google policy.
+    Authorized organization users can view data available through their permissions.
+    Easy-Apps Solutions does not routinely access organization files. Its personnel
+    may read Google user data only with explicit permission for support or
+    troubleshooting, when necessary for security purposes or legal compliance, or
+    when the data is aggregated and anonymized for internal operations as permitted
+    by Google's Limited Use requirements.
   </p>
 
   <h2>5. Data Protection</h2>
+  <p>easyPass uses the following protections:</p>
+  <ul>
+    <li>HTTPS for Google API traffic.</li>
+    <li>Google Picker and the per-file <code>drive.file</code> permission to authorize access to selected files and files created by the app.</li>
+    <li>Checks of the signed-in email against the organization's active access roster and role permissions, together with file-level Drive permissions.</li>
+    <li>Android app-private storage for the local membership database, preferences, and cache files.</li>
+    <li>AES-GCM encryption for newly generated invitation payloads, using a key derived from the invitation access code. Invitations identify the organization configuration, invited email, and role; joining also requires the approved Google account and Drive access.</li>
+  </ul>
   <p>
-    easyPass applies reasonable administrative and technical safeguards appropriate to
-    the nature of the data. These may include transport encryption provided by HTTPS
-    and Google APIs, Android platform protections, access controls, and secure token
-    storage mechanisms supported by the device.
+    Invitation encryption does not mean that organization Drive files or the local
+    membership database are encrypted end-to-end by easyPass.
   </p>
   <p>
     No storage or transmission method is completely secure. Users should protect their
@@ -157,16 +180,19 @@
 
   <h2>6. Data Retention and Deletion</h2>
   <p>
-    easyPass files remain in the user's Google Drive until the user or an authorized
-    organization administrator deletes them. Local application data may remain on a
-    device until the user clears the application's data or uninstalls the app.
+    Organization files remain in the chosen Google Drive storage until the storage
+    owner or another account with the necessary permissions deletes them, or an
+    organization access-reset operation replaces and deletes the old files. Local
+    records and cached files may remain until removed by the app, cleared through
+    Android's app-data settings, or removed when the app is uninstalled.
   </p>
-  <p>Users can stop easyPass's future access to Google data by:</p>
+  <p>Users can control access and remove data in different ways:</p>
   <ul>
-    <li>Revoking easyPass access from their Google Account permissions.</li>
-    <li>Signing out or disconnecting Google Drive within the app, where available.</li>
-    <li>Deleting easyPass files from Google Drive.</li>
-    <li>Clearing the app's local data or uninstalling easyPass.</li>
+    <li>Revoke easyPass's authorization in Google Account permissions to stop future authorized Google API access. This does not delete organization files or erase local copies already downloaded.</li>
+    <li>Use the app's leave-organization or sign-out controls to clear the local membership records and saved organization connection. These controls do not delete the shared Drive files or necessarily remove cached exports.</li>
+    <li>Ask the storage owner to remove an authorized account's organization access and file-level Drive permissions. Removing access does not remotely erase copies already downloaded or exported.</li>
+    <li>Delete organization files in Google Drive using an account with the necessary permissions. Drive deletion does not erase copies held on other devices or previously exported files.</li>
+    <li>Clear easyPass's app data in Android settings or uninstall the app to remove its current app-private local data. This does not delete organization Drive files, separately saved or shared exports, or all backups. Android backup is enabled, so backup copies may remain outside the app installation.</li>
   </ul>
   <p>
     For assistance with deletion requests or privacy questions, contact
@@ -178,6 +204,12 @@
     Google Drive access is granted only after the user completes Google's OAuth consent
     process. Users may decline the requested permission, although Google Drive-based
     storage and synchronization features will then be unavailable.
+  </p>
+  <p>
+    Google Picker lets users select organization files or folders when additional
+    per-file authorization is needed. Authorization for easyPass to use a file and
+    the Google account's permission to access that shared file are separate
+    requirements; the app also checks organization account and role authorization.
   </p>
   <p>
     Users can review or revoke easyPass's access through their Google Account's
