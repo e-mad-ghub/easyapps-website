@@ -1,0 +1,4 @@
+# Jekyll excludes dot directories unless they are explicitly included.
+# Android App Links requires this file at its existing public URL.
+include:
+  - .well-known
